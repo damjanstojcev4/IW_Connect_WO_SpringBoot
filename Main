@@ -1,0 +1,94 @@
+package com.IW;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class Main {
+    static void cardScanner() {
+        int pin1 = 1111;
+        int pin2 = 2222;
+        int pin3 = 3333;
+
+        Scanner scanner = new Scanner(System.in);
+        int pin = scanner.nextInt();
+
+        if (pin == pin1) {
+            System.out.println("Damjan");
+            LocalDateTime dateTime = LocalDateTime.now();
+            DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+            String formattedDate = dateTime.format(myFormatObj);
+            System.out.println(formattedDate);
+        } else if (pin == pin2) {
+            System.out.println("Stefan");
+            LocalDateTime dateTime = LocalDateTime.now();
+            DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+            String formattedDate = dateTime.format(myFormatObj);
+            System.out.println(formattedDate);
+        } else if (pin == pin3) {
+            System.out.println("Beti");
+            LocalDateTime dateTime = LocalDateTime.now();
+            DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+            String formattedDate = dateTime.format(myFormatObj);
+            System.out.println(formattedDate);
+        } else {
+            System.out.println("Error");
+        }
+    }
+
+    static void menu() {
+        int choice;
+        int total = 0;
+
+        // Price Array
+        int[] price = new int[10];
+        price[1] = 50;
+        price[2] = 40;
+        price[3] = 50;
+        price[4] = 80;
+        price[5] = 70;
+        price[6] = 60;
+        price[7] = 100;
+        price[8] = 60;
+        price[9] = 90;
+
+        // Menu Array
+        String[] food = new String[10];
+        food[1] = "Макијато ";
+        food[2] = "Еспресо ";
+        food[3] = "Капучино ";
+        food[4] = "Парче Пица ";
+        food[5] = "Салата ";
+        food[6] = "Хот Дог ";
+        food[7] = "Риба ";
+        food[8] = "Компири ";
+        food[9] = "Ладен Сендвич ";
+
+        System.out.println("""
+                
+                1. Макијато - 50
+                2. Еспресо - 40
+                3. Капучино - 50
+                4. Парче Пица - 80
+                5. Салата - 70
+                6. Хот Дог - 60
+                7. Риба - 100
+                8. Компири - 60
+                9. Ладен Сендвич - 90
+                """);
+
+        Scanner input = new Scanner(System.in);
+
+        for(int i = 0; i < 3; i++){
+            int inputNumber = input.nextInt();
+            total += price[inputNumber];
+        }
+
+        System.out.println("Вкупно: " + total);
+
+    }
+    public static void main(String[] args) {
+        cardScanner();
+        menu();
+    }
+}
